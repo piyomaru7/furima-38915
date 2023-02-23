@@ -24,12 +24,12 @@
 |----------------|----------|------------------------------|
 |name            |string    |null: false                   |
 |explanation     |text      |null: false                   |
-|category_id     |numeric   |null: false                   |
-|status_id       |numeric   |null: false                   |
-|postage_id      |numeric   |null: false                   |
-|area_id         |numeric   |null: false                   |
-|number_of_day_id|numeric   |null: false                   |
-|price           |string    |null: false                   |
+|category_id     |integer   |null: false                   |
+|status_id       |integer   |null: false                   |
+|postage_id      |integer   |null: false                   |
+|area_id         |integer   |null: false                   |
+|number_of_day_id|integer   |null: false                   |
+|price           |integer   |null: false                   |
 |user            |references|null: false, foreign_key: true|
 
 
@@ -56,7 +56,7 @@
 |Column          |Type      |Options                       |
 |----------------|----------|------------------------------|
 |zip_code        |string    |null: false                   |
-|area_id         |numeric   |null: false                   |
+|area_id         |integer   |null: false                   |
 |municipality    |string    |null: false                   |
 |street_number   |string    |null: false                   |
 |building_name   |string    |                              |
