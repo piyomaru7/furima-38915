@@ -11,7 +11,7 @@
 |last_name         |string|null: false              |
 |first_name_kana   |string|null: false              |
 |last_name_kana    |string|null: false              |
-|birthday          |string|null: false              |
+|birthday          |date  |null: false              |
 
 ### Association
 
@@ -20,17 +20,17 @@
 
 ## items
 
-|Column        |Type      |Options                       |
-|--------------|----------|------------------------------|
-|name          |string    |null: false                   |
-|explanation   |text      |null: false                   |
-|category      |string    |null: false                   |
-|status        |string    |null: false                   |
-|postage       |string    |null: false                   |
-|area          |string    |null: false                   |
-|number_of_days|string    |null: false                   |
-|price         |string    |null: false                   |
-|user_id       |references|null: false, foreign_key: true|
+|Column          |Type      |Options                       |
+|----------------|----------|------------------------------|
+|name            |string    |null: false                   |
+|explanation     |text      |null: false                   |
+|category_id     |numeric   |null: false                   |
+|status_id       |numeric   |null: false                   |
+|postage_id      |numeric   |null: false                   |
+|area_id         |numeric   |null: false                   |
+|number_of_day_id|numeric   |null: false                   |
+|price           |string    |null: false                   |
+|user            |references|null: false, foreign_key: true|
 
 
 ### Association
@@ -42,26 +42,26 @@
 
 |Column |Type      |Options                       |
 |-------|----------|------------------------------|
-|user_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
+|user   |references|null: false, foreign_key: true|
+|item   |references|null: false, foreign_key: true|
 
 ### Association
 
 - belongs_to :user
 - belongs_to :item
-- has_one :addresses
+- has_one :address
 
 ## addresses
 
 |Column          |Type      |Options                       |
 |----------------|----------|------------------------------|
 |zip_code        |string    |null: false                   |
-|prefectures     |string    |null: false                   |
+|area_id         |numeric   |null: false                   |
 |municipality    |string    |null: false                   |
 |street_number   |string    |null: false                   |
 |building_name   |string    |                              |
 |telephone_number|string    |null: false                   |
-|order_id        |references|null: false, foreign_key: true|
+|order           |references|null: false, foreign_key: true|
 
 ### Association
 
