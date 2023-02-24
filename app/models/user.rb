@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :items
   has_many :orders
 
-  validates :nickname,        presence: true  
+  validates :nickname,        presence: true
   validates :birthday,        presence: true
 
   with_options presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/ } do
@@ -19,7 +19,7 @@ class User < ApplicationRecord
     validates :first_name_kana
     validates :last_name_kana
   end
-  
-  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX
 end
