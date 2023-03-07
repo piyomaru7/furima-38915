@@ -4,13 +4,15 @@ class OrdersController < ApplicationController
 
   def index
     @order_address = OrderAddress.new
-    return unless @item.order.present?
+    redirect_to root_path if @item.order.present?
+
+    return unless current_user.id == @item.user_id
 
     redirect_to root_path
   end
 
   def create
-    @order_address = OrderAddress.new(order_params)    
+    @order_address = OrderAddress.new(order_params)
     if @order_address.valid?
       pay_item
       @order_address.save
