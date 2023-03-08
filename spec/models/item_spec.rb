@@ -36,7 +36,7 @@ RSpec.describe Item, type: :model do
       it 'category_idが1の場合は出品できない' do
         @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category can't be blank")
+        expect(@item.errors.full_messages).to include("Category を選択してください")
       end
       it 'status_idが空では出品できない' do
         @item.status_id = ''
@@ -46,7 +46,7 @@ RSpec.describe Item, type: :model do
       it 'status_idが1の場合は出品できない' do
         @item.status_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Status can't be blank")
+        expect(@item.errors.full_messages).to include("Status を選択してください")
       end
       it 'postage_idが空では出品できない' do
         @item.postage_id = ''
@@ -56,7 +56,7 @@ RSpec.describe Item, type: :model do
       it 'postage_idが1の場合は出品できない' do
         @item.postage_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Postage can't be blank")
+        expect(@item.errors.full_messages).to include("Postage を選択してください")
       end
       it 'area_idが空では出品できない' do
         @item.area_id = ''
@@ -66,7 +66,7 @@ RSpec.describe Item, type: :model do
       it 'area_idが1の場合は出品できない' do
         @item.area_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Area can't be blank")
+        expect(@item.errors.full_messages).to include("Area を選択してください")
       end
       it 'number_of_day_idが空では出品できない' do
         @item.number_of_day_id = ''
@@ -76,7 +76,7 @@ RSpec.describe Item, type: :model do
       it 'number_of_day_idが1の場合は出品できない' do
         @item.number_of_day_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Number of day can't be blank")
+        expect(@item.errors.full_messages).to include("Number of day を選択してください")
       end
       it 'priceが空では出品できない' do
         @item.price = ''

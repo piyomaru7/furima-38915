@@ -4,7 +4,7 @@ class OrderAddress
                 :order_id, :token
 
   validates :zip_code,         presence: true, format: { with: /\A[0-9]{3}-[0-9]{4}\z/ }
-  validates :area_id,          presence: true, numericality: { other_than: 1, message: "can't be blank" }
+  validates :area_id,          presence: true, numericality: { other_than: 1, message: "を選択してください" }
   validates :municipality,     presence: true
   validates :street_number,    presence: true
   validates :telephone_number, presence: true, format: { with: /\A[0-9]{10,11}\z/ }
